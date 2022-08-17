@@ -1,0 +1,51 @@
+.page {
+    margin-top: -6.8rem;
+    margin-bottom: 6.8rem;
+
+    @include mobile {
+        margin-top: -3.8rem;
+        margin-bottom: 3.8rem;
+    }
+
+    &__banner {
+        position: relative;
+        margin-bottom: -100%;
+
+        img {
+            display: block;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            background-color: rgba(21, 33, 51, 0.8);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    &__panel {
+        padding: 5rem 0;
+        font-size: 4rem;
+        font-weight: 300;
+
+        @include mobile {
+            font-size: 3rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__master {
+        margin-bottom: 5rem;
+        &__no-product {
+            color: $text-color;
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 5rem 1.5rem;
+            text-align: center;
+            text-transform: capitalize;
+        }
+    }
+}

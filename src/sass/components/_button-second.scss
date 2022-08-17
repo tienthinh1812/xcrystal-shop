@@ -1,0 +1,15 @@
+.btn-second {
+    display: inline-block;
+    padding: 0.3rem 3rem 0.5rem;
+    background-color: #34c288;
+    border-radius: 3px;
+    min-width: 17rem;
+    text-align: center;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+        background-color: #2c939a;
+    }
+}

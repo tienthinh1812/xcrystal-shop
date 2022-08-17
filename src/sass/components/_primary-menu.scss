@@ -1,0 +1,149 @@
+.primary-menu {
+    background-color: rgba($color: $black-color, $alpha: 0.3);
+    width: 100%;
+    z-index: 999;
+
+    @include mobile {
+        order: -1;
+
+        &__cover {
+            position: absolute;
+            background-color: rgba($color: $black-color, $alpha: 0.5);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white-color;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: 600;
+        position: relative;
+
+        @include mobile {
+            position: fixed;
+            display: block;
+            width: 25rem;
+            max-height: 100vh;
+            padding: 3.5rem 2rem 2rem 2rem;
+            background-color: #333;
+            top: 0;
+            right: -25rem;
+            overflow-y: auto;
+            transition: right 0.3s linear;
+
+            &.show {
+                right: 0;
+            }
+        }
+
+        &__item {
+            padding: 2.4rem 1.5rem;
+            transition: color 0.2s linear;
+
+            @include mobile {
+                width: 100%;
+                padding: 1.5rem 0;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background-color: $white-color;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                &::after:last-child {
+                    background-color: red;
+                }
+            }
+
+            &__search,
+            &__link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                @include mobile {
+                    display: block;
+                    font-size: 1.5rem;
+                }
+
+                &:hover {
+                    color: $primary-color;
+                }
+
+                &:hover::after {
+                    width: 5rem;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background-color: $primary-color;
+                    bottom: -2.4rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: width 0.2s linear;
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+            }
+
+            &__search {
+                font-size: 2rem;
+                padding: 0 1rem;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+
+            &.active &__link {
+                color: $primary-color;
+            }
+
+            &.active a::after {
+                width: 5rem;
+            }
+
+            &:hover > .menu-shop {
+                display: block;
+            }
+        }
+    }
+
+    &__mobile {
+        display: none;
+        justify-content: flex-end;
+
+        @include mobile {
+            display: flex;
+        }
+
+        i {
+            font-size: 2.5rem;
+            padding: 0.5rem;
+            transition: color 0.2s linear;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}

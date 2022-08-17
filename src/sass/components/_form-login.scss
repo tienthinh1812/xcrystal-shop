@@ -1,0 +1,125 @@
+.form-login {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s linear;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.active &__content {
+        transform: translateY(0);
+    }
+
+    &__modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba($color: $black-color, $alpha: 0.7);
+    }
+
+    &__content {
+        background-color: $login-color;
+        width: auto;
+        max-width: 63rem;
+        margin: auto;
+        padding: 30px 110px 45px 110px;
+        border: 1px solid $border-second-color;
+        z-index: 99;
+        transform: translateY(-100%);
+        transition: transform 0.3s linear;
+
+        @include mobile {
+            width: 37rem;
+            padding: 30px 30px 45px 30px;
+        }
+
+        &__header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 15px;
+            text-transform: uppercase;
+
+            h1 {
+                font-size: 2.5rem;
+                color: $primary-color;
+                margin-bottom: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                text-align: center;
+
+                a {
+                    color: $primary-color;
+
+                    &:hover {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+
+        &__form {
+            width: 100%;
+            padding: 15px;
+
+            &__filed {
+                position: relative;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                color: $text-color;
+                display: flex;
+                align-items: center;
+
+                input {
+                    width: 100%;
+                    font-size: 1.6rem;
+                    padding: 5px 15px 5px 11rem;
+                    background-color: transparent;
+                    border: 1px solid $border-color;
+                    outline: none;
+                    color: $focus-color;
+                    border-radius: 2px;
+                    transition: border 0.3s linear;
+
+                    &:focus {
+                        border-color: $focus-color;
+                    }
+                }
+
+                label {
+                    position: absolute;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+
+                    i {
+                        margin: 0 5px;
+                    }
+                }
+            }
+
+            &__remember {
+                font-size: 1.6rem;
+                color: $text-color;
+                font-weight: 600;
+                margin-bottom: 1rem;
+
+                label {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}

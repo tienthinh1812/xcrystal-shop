@@ -1,0 +1,107 @@
+.cart {
+    padding: 5rem 0;
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+
+        th {
+            background-color: $black-color;
+            text-align: start;
+            color: $text-color;
+        }
+
+        td {
+            font-size: 1.6rem;
+            background-color: $login-color;
+        }
+
+        th,
+        td {
+            padding: 0.5rem 1rem;
+
+            @include mobile {
+                padding: 0.5rem 0.3rem;
+            }
+        }
+    }
+
+    &__remove {
+        .btn-second {
+            min-width: auto;
+
+            @include mobile {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+        }
+    }
+
+    &__name {
+        width: 100%;
+        color: $white-color;
+        text-transform: capitalize;
+
+        a:hover {
+            color: $primary-color;
+        }
+    }
+
+    &__quantily {
+        input {
+            width: 100%;
+            color: $white-color;
+            min-width: 10rem;
+            background-color: transparent;
+            outline: none;
+            border: 1px solid $border-color;
+            padding: 0.3rem 0 0.3rem 1.5rem;
+
+            @include mobile {
+                min-width: 3rem;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+        }
+    }
+
+    &__total {
+        color: $primary-color;
+    }
+
+    &__subtotal {
+        color: $text-color;
+        text-align: end;
+    }
+
+    &__control {
+        text-align: end;
+
+        @include mobile {
+            .btn-second {
+                float: left;
+            }
+        }
+
+        .btn-second {
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-second:first-child {
+            float: left;
+        }
+
+        .btn-second:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__no-result {
+        color: $text-color;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}

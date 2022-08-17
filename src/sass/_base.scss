@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include mobile {
+        &.show-menu {
+            position: relative;
+            overflow: hidden;
+        }
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    color: $white-color;
+    background-color: $bg-main;
+    overflow-y: overlay;
+    position: relative;
+    right: 0;
+    transition: right 0.3s linear;
+
+    &.show-menu {
+        overflow: hidden;
+        right: 25rem;
+    }
+
+    &.modal {
+        overflow: hidden;
+    }
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba($color: $black-color, $alpha: 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: rgba($color: $black-color, $alpha: 0.5);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+    transition: color 0.3s linear;
+}
+
+a:hover {
+    color: $white-color;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.col-25 {
+    grid-template-columns: 25% 1fr;
+}
+
+@each $var in $numbers {
+    .col-#{$var} {
+        grid-template-columns: repeat($var, 1fr);
+    }
+}
+
+@each $var in $numbers {
+    .col-md-#{$var} {
+        @include tablet {
+            grid-template-columns: repeat($var, 1fr);
+        }
+    }
+}
+
+@each $var in $numbers {
+    .col-sm-#{$var} {
+        @include mobile {
+            grid-template-columns: repeat($var, 1fr);
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: auto;
+    z-index: 1;
+
+    @include tablet {
+        width: 750px;
+        padding: 0 20px;
+    }
+
+    @include mobile {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+.main {
+    margin-top: $header-height;
+    min-height: 100vh;
+    transition: margin-top 0.2s linear;
+
+    &.shrink {
+        margin-top: $header-shrink-height;
+        @include tablet {
+            margin-top: 0;
+        }
+    }
+    @include tablet {
+        margin-top: 0;
+    }
+}
+
+.grid {
+    display: grid;
+
+    @include mobile {
+        &.col-flex-center {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+}
+
+.main .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

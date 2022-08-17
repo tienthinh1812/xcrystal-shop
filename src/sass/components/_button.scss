@@ -1,0 +1,28 @@
+.btn {
+    height: 4rem;
+    width: 20rem;
+    background-color: $primary-color;
+    font-size: 1.6rem;
+    color: $black-color;
+    border-radius: 2px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+
+    &::after {
+        position: absolute;
+        content: '';
+        bottom: 2px;
+        right: 2px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent $black-color $black-color transparent;
+    }
+
+    &:hover {
+        background-color: #ffc886;
+    }
+}

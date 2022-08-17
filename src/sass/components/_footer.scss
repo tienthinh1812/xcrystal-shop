@@ -1,0 +1,64 @@
+.footer {
+    width: 100%;
+    height: 7rem;
+    background-color: $black-color;
+    border-bottom: 2px solid $primary-color;
+
+    &__menu {
+        display: flex;
+        height: 100%;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $primary-color;
+        text-align: center;
+        position: relative;
+
+        &__item {
+            flex: 1;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: default;
+            border-left: 1px solid $login-color;
+
+            &:first-child {
+                border: unset;
+            }
+
+            &:hover {
+                background-color: $login-color;
+            }
+
+            &:hover &__container {
+                display: block;
+            }
+
+            &__container {
+                display: none;
+                position: absolute;
+                width: 100%;
+                bottom: 100%;
+                left: 0;
+                background-color: $login-color;
+                padding: 2.5rem 1.5rem;
+                z-index: 99;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 80%;
+                    width: 0.5px;
+                    background-color: $border-color;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    @include tablet {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

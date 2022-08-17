@@ -1,0 +1,29 @@
+.coming-soon {
+    color: $text-color;
+    padding: 5rem 0;
+    text-align: center;
+
+    font-size: 4rem;
+    h2 {
+        text-transform: capitalize;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    &__btn {
+        a {
+            color: $white-color;
+            font-size: 1.4rem;
+            background-color: #34c288;
+            padding: 0.3rem 3rem 0.5rem;
+            border-radius: 3px;
+            transition: background-color 0.2s linear;
+
+            &:hover {
+                background-color: $focus-color;
+            }
+        }
+    }
+}

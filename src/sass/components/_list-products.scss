@@ -1,0 +1,113 @@
+.master {
+    padding-bottom: 5rem;
+
+    &__menu-products {
+        width: 100%;
+        padding-right: 1.5rem;
+
+        & > .section {
+            border-right: 1px solid $border-color;
+            padding-right: 1.5rem;
+
+            @include mobile {
+                border: none;
+                padding: 0;
+            }
+        }
+
+        @include mobile {
+            border: none;
+            padding: unset;
+        }
+
+        &__list {
+            &__item {
+                margin-top: 2.5rem;
+                font-size: 1.4rem;
+                cursor: pointer;
+
+                @include mobile {
+                    display: inline-block;
+                    margin: 1rem;
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__list-products {
+        &__sort {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            p {
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+            }
+
+            &__select {
+                font-weight: 600;
+                outline: none;
+                color: $border-color;
+                background-color: transparent;
+                border-color: $border-color;
+                padding: 0.3rem 1rem;
+                transition: border-color 0.3s linear;
+
+                &:focus {
+                    border-color: $focus-color;
+                }
+
+                option {
+                    color: $text-color;
+                }
+            }
+
+            &__result {
+                font-weight: 600;
+
+                span {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        &__view-all {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            color: $primary-color;
+            margin-top: 2rem;
+        }
+
+        &__pagination {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 1.6rem;
+            color: $text-color;
+            margin-top: 2rem;
+
+            &__item {
+                font-weight: bold;
+                padding: 0 1rem;
+                cursor: pointer;
+                &:hover {
+                    color: $focus-color;
+                }
+
+                &.active {
+                    background-color: $focus-color;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
